@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Create Calendar{% endblock %}
+{% block body %}
+<div class=content>
+    <h1>Create new planning</h1>
+    <form id="search" class="form-create" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group d-flex flex-column align-content-between">
+            <input class="form-control" autofocus type="text" name="search_q" id="search_q" placeholder="Find a recipe">
+        </div>
+        <input class="btn btn-primary btn-light" type="submit" value="Search">
+    </form>
+
+    <div id="results" class="container-fluid"></div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'plateprep/search.js' %}"></script>
+</div>
+{% endblock %}

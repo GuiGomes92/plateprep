@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Recipe{% endblock %}
+
+{% block body %}
+<div class="content">
+    <input type="hidden" id="recipe_id" value="{{ id }}">
+    <div id="recipeBody"></div>
+
+    <form class="form-add-recipe" id="form_add" method="POST">
+        {% csrf_token %}
+        <div class="form-group d-flex flex-column align-content-between">
+            <label for="insertRecipe">Add this recipe to your planning on:</label>
+            <select class="form-select" name="insertDay" id="insertDay">
+                <option value="Mon">Mon</option>
+                <option value="Tue">Tue</option>
+                <option value="Wed">Wed</option>
+                <option value="Thu">Thu</option>
+                <option value="Fri">Fri</option>
+                <option value="Sat">Sat</option>
+                <option value="Sun">Sun</option>
+            </select>
+        </div>
+        <div class="form-group d-flex flex-column align-content-between">
+            <label for="insertType">Add it for:</label>
+            <select class="form-select" name="insertType" id="insertType">
+                {% for type in mealTypes %}
+                <option value="{{type}}">{{type}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-light" type="submit">Add</button>
+    </form>
+
+    <div id="msg-add">
+        <p>Bon Appétit</p>
+    </div>
+
+    <div id="msg-error">
+        <p>This recipe has been already added to this meal. Try another.</p>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'plateprep/recipe.js' %}"></script>
+{% endblock %}

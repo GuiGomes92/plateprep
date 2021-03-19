@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Shopping List{% endblock %}
+{% block body %}
+<div class="content">
+    <h1>Your Shopping List for the week</h1>
+    {% if message %}
+    <p class="lead text-center">{{ message }}</p>
+    {% endif %}
+    <div class="d-flex justify-content-center flex-wrap">
+        {% for item in recipes %}
+        <div class="card m-3 listShopping">
+            {% if item.0.0 %}
+            <div class="card-header">
+                {{ item.0.0 }}
+            </div>
+            {% endif %}
+            <ul class="list-group">
+                {% for i in item %}
+                {% if not i.0.0 %}
+                <li class="list-group-item">
+                    <div class="list-item">
+                        <input class="form-check-input me-1" id="check_{{ i.1 }}" onclick="checkItem('{{ i.1 }}')"
+                            type="checkbox" value="" aria-label="...">
+                        <p class="check_{{ i.1 }}">{{ i.0 }}</p>
+                    </div>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'plateprep/shoppingList.js' %}"></script>
+{% endblock %}

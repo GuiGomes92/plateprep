@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+{% if user.is_authenticated %}
+<div class="content-index">
+    <div class="card text-center calendar-nav">
+        <div class="card-header calendar-div">
+            <ul class="nav nav-tabs card-header-tabs d-flex justify-content-around calendar-ul">
+                <li class="nav-item">
+                    <button class="nav-link" id="Mon">Monday</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="Tue">Tuesday</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="Wed">Wednesday</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="Thu">Thursday</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="Fri">Friday</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="Sat">Saturday</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="Sun">Sunday</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card d-flex justify-content-around mt-4" id="card-body">
+        <div class="card mx-4 mb-4">
+            <div class="card-header">
+                Breakfast
+            </div>
+            <div class="card-body">
+                <h5 id="title-breakfast" class="card-title">No Meal Scheduled</h5>
+                <div class='div-index'>
+                    <a href="{% url 'create' %}" id="btnBreakfast" class="btn btn-light">Add Recipe</a>
+                    <form id="form-remove-recipe-Breakfast" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" id="btnBreakfastRemove" class="btn btn-light">Remove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card mx-4 mb-4">
+            <div class="card-header">
+                Lunch
+            </div>
+            <div class="card-body">
+                <h5 id="title-lunch" class="card-title">No Meal Scheduled</h5>
+                <div class='div-index'>
+                    <a href="{% url 'create' %}" id="btnLunch" class="btn btn-light">Add Recipe</a>
+                    <form id="form-remove-recipe-Lunch" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" id="btnLunchRemove" class="btn btn-light">Remove</button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mx-4 mb-4">
+            <div class="card-header">
+                Dinner
+            </div>
+            <div class="card-body">
+                <h5 id="title-dinner" class="card-title">No Meal Scheduled</h5>
+                <div class='div-index'>
+                    <a href="{% url 'create' %}" id="btnDinner" class="btn btn-light">Add Recipe</a>
+                    <form id="form-remove-recipe-Dinner" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" id="btnDinnerRemove" class="btn btn-light">Remove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% else %}
+<div class="landing-body">
+    <h1>Plateprep</h1>
+    <ul>
+        <li>Plan Your Meal</li>
+        <li>Live Healthy</li>
+        <li>Change Your Life</li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
+{% block script %}
+<script src="{% static 'plateprep/index.js' %}"></script>
+{% endblock %}

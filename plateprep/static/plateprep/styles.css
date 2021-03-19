@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content, .content-index {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+.listShopping {
+    width: calc(100%/4);
+}
+
+#nav-title, .landing-body h1, .footer-link {
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 1em 0 0 0;
+}
+
+#RecipeName {
+    margin-bottom: 1em
+}
+
+.landing-body {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    background-image: url(ella-olsson-C1Q3qOTlegg-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-body ul {
+    background-color: #264653;
+    color: white;
+    border-radius: 0.5em;
+    padding: 10px;
+    display: flex;
+    width: 45vw;
+    justify-content: center;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.landing-body ul li:first-of-type{
+    border-right: 1px solid white;
+    padding-right: 5%;
+}
+
+.landing-body ul li:nth-of-type(2){
+    border-right: 1px solid white;
+    padding: 0 5%;
+}
+
+.landing-body ul li:nth-of-type(3){
+    padding-left: 5%;
+}
+
+.landing-body h1 {
+    font-size: 6rem;
+    color: #2a9d8f;
+    margin: 2rem 0;
+}
+
+#card-body {
+    border: none;
+}
+
+table {
+    margin: auto;
+    width: 90%;
+}
+
+td {
+    width: 12%;
+    border: 1px solid black;
+}
+
+th {
+    width: 12%;
+}
+
+tr td:first-of-type {
+    border: none;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+.ingredientDiv {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.card-div {
+    margin: 2%;
+}
+
+.nav-item button:focus {
+    outline: 0;
+}
+
+.form-login, .form-register, .form-create, .form-add-recipe {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+#form-remove-recipe {
+    display: inline-block;
+    margin: 0;
+
+}
+
+#msg-error {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    margin: 2em auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+#msg-error p {
+    margin: 0;
+}
+
+.form-register #btn-register {
+    margin-bottom: 1rem;
+}
+
+.form-register p {
+    margin: 0;
+    text-align: center;
+}
+
+/* Styles recipe page */
+.recipeText {
+    width: 25%;
+}
+
+.ingredientDiv div:first-of-type {
+    width: 15%;
+}
+
+.recipeText h2 {
+    font-size: 1.5rem;
+    color: #868B8E;
+}
+
+.recipeText ul, .recipeText ol {
+    padding: 0;
+}
+
+ol li::marker, ul li::marker {
+    color: #868B8E;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-header-tabs {
+    margin: 0;
+}
+
+.calendar-nav {
+    padding: 0;
+}
+
+.calendar-div {
+    height: 100%;
+    padding: 0;
+}
+
+.calendar-ul li {
+    width: calc(100% / 7);
+}
+
+.calendar-ul li button{
+    width: 100%;
+    padding: 20px 0;
+}
+
+.list-item {
+    margin-left: 1.25rem;
+}
+.list-item p {
+    margin-bottom: 0;
+}
+
+.figure-img-recipe {
+    width: 400px;
+}
+
+#nav-footer {
+    flex-shrink: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#msg-add, #msg-error {
+    display: none;
+}
+
+#msg-add p {
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+.card {
+    height: fit-content;
+}
+
+#form-remove-recipe-Breakfast, #form-remove-recipe-Lunch, #form-remove-recipe-Dinner {
+    display: none;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .landing-body h1 {
+      font-size: 4rem;
+    }
+
+    h1 {
+        margin: 1em 0.5em;
+    }
+
+    .figure {
+        display: flex;
+        justify-content: center;
+    }
+
+    .div-index {
+        margin: 0;
+        width: 80%;
+    }
+
+    .div-index a {
+        margin-bottom: 1vh;
+    }
+
+    .div-index a, .div-index form, .div-index form button {
+        width: 100%;
+    }
+
+    .landing-body ul {
+        flex-direction: column;
+        width: 50vw;
+        font-size: 1.3rem;
+        align-items: center;
+    }
+
+    .landing-body ul li:first-of-type {
+        border-bottom: 1px solid white;
+        border-right: 0;
+        padding-right: 0;
+        padding-bottom: 3%;
+    }
+
+    .landing-body ul li:nth-of-type(2) {
+        border-bottom: 1px solid white;
+        border-right: 0;
+        padding: 3% 0;
+    }
+
+    .landing-body ul li:nth-of-type(3) {
+        padding: 0;
+        padding-top: 3%;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .form-login, .form-register, .form-create, .form-add-recipe {
+        margin-top: 0;
+    }
+
+    .form-create {
+        margin-bottom: 1em;
+    }
+
+    .form-add-recipe {
+        margin-bottom: 1em;
+    }
+
+    .ingredientDiv {
+        flex-direction: column;
+    }
+
+    .figure-img-recipe {
+        width: 300px;
+    }
+
+    .ingredientDiv div:first-of-type {
+        width: 100%;
+    }
+
+    .ingredientDiv div {
+        width: 100%;
+    }
+
+    .recipeText ul, .recipeText ol {
+        padding-left: 25px;
+    }
+
+    #msg-error {
+        width: 80%;
+        margin: 1em auto;
+    }
+
+    /* .content div:first-of-type {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    .listShopping {
+        width: 90%;
+    }
+
+    .content-index {
+        flex-direction: row;
+    }
+
+    .card-header-tabs {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .calendar-nav {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    padding: 0;
+    }
+
+    .calendar-ul li {
+        width: 100%;
+        height: calc(100%/7);
+    }
+
+    .calendar-ul li button {
+        width: 100%;
+        height: 100%;
+    }
+
+  }
