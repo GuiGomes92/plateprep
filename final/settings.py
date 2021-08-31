@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'yopvk2t=_od0mnb@by4if6mn*u77=6l*hky$9su3chky_06t*0'
+RECIPE_API_KEY = os.environ.get('RECIPE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

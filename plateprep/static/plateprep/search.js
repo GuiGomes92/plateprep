@@ -7,8 +7,8 @@ form.addEventListener('submit', (event) => {
     fetch(`https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${q}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "7b36be9c9bmsh10f12e7f9465364p1578f7jsnbfe8304f7bf6",
-            "x-rapidapi-host": "tasty.p.rapidapi.com"
+            "x-rapidapi-host": "tasty.p.rapidapi.com",
+            "x-rapidapi-key": "7b36be9c9bmsh10f12e7f9465364p1578f7jsnbfe8304f7bf6"
         }
     })
         .then(response => response.json())
